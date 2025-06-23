@@ -1,42 +1,149 @@
-/* Add this to your existing App.css or replace all content */
-body {
-  font: 14px "Century Gothic", Futura, sans-serif;
-  margin: 20px;
+/* Modern Tic Tac Toe with Dark Mode */
+:root {
+  /* Light Theme Colors */
+  --bg-color: #f5f5f5;
+  --text-color: #333333;
+  --board-bg: #ffffff;
+  --square-border: #e0e0e0;
+  --square-hover: #f8f9fa;
+  --status-bg: #f8f9fa;
+  --x-color: #e74c3c;
+  --o-color: #3498db;
+  --winner-color: #2ecc71;
+  --shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
 }
 
-.app {
+[data-theme="dark"] {
+  /* Dark Theme Colors */
+  --bg-color: #1a1a1a;
+  --text-color: #f0f0f0;
+  --board-bg: #2d2d2d;
+  --square-border: #444444;
+  --square-hover: #3a3a3a;
+  --status-bg: #333333;
+  --x-color: #ff6b6b;
+  --o-color: #6bb9ff;
+  --winner-color: #4cd964;
+  --shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+body {
+  background: var(--bg-color);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   display: flex;
-  flex-direction: column;
+  justify-content: center;
   align-items: center;
+  min-height: 100vh;
+  margin: 0;
+  color: var(--text-color);
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+.game {
+  background: var(--board-bg);
+  border-radius: 16px;
+  box-shadow: var(--shadow);
+  padding: 2rem;
+  text-align: center;
+  width: 350px;
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+h1 {
+  color: var(--text-color);
+  margin-bottom: 1.5rem;
+  font-size: 2.2rem;
 }
 
 .status {
-  margin-bottom: 10px;
-  font-size: 24px;
+  font-size: 1.3rem;
+  margin-bottom: 1.5rem;
+  padding: 0.8rem;
+  background: var(--status-bg);
+  border-radius: 8px;
+  font-weight: 600;
+  transition: all 0.3s ease;
 }
 
-.board-row:after {
-  clear: both;
-  content: "";
-  display: table;
+.board-row {
+  display: flex;
+  justify-content: center;
+  margin-bottom: -1px;
 }
 
 .square {
-  background: #fff;
-  border: 1px solid #999;
-  float: left;
-  font-size: 24px;
+  width: 80px;
+  height: 80px;
+  background: var(--board-bg);
+  border: 2px solid var(--square-border);
+  font-size: 2.5rem;
   font-weight: bold;
-  line-height: 34px;
-  height: 34px;
-  margin-right: -1px;
-  margin-top: -1px;
-  padding: 0;
-  text-align: center;
-  width: 34px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
 }
 
-.square:focus {
-  outline: none;
-  background: #ddd;
+.square:hover {
+  background: var(--square-hover);
+}
+
+.square:active {
+  transform: scale(0.95);
+}
+
+.square.X {
+  color: var(--x-color);
+}
+
+.square.O {
+  color: var(--o-color);
+}
+
+.winner-message {
+  color: var(--winner-color);
+  animation: winnerPulse 1.5s infinite;
+}
+
+@keyframes winnerPulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+  100% { transform: scale(1); }
+}
+
+.theme-toggle {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+  color: var(--text-color);
+  transition: transform 0.2s ease;
+}
+
+.theme-toggle:hover {
+  transform: scale(1.1);
+}
+
+.theme-toggle:active {
+  transform: scale(0.95);
+}
+
+@media (max-width: 400px) {
+  .game {
+    width: 90%;
+    padding: 1rem;
+  }
+  .square {
+    width: 70px;
+    height: 70px;
+  }
+  .theme-toggle {
+    top: 10px;
+    right: 10px;
+  }
 }
