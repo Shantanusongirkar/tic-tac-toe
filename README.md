@@ -18,15 +18,5 @@
 
 ## 🚀 Quick Start
 
-```bash
-git clone https://github.com/your-username/tic-tac-toe.git
-cd tic-tac-toe
-npm install
-npm start
-# open http://localhost:3000
-✨ Features
-✅ Pure React (hooks + functional components)
-🎯 Instant win / draw detection
-↩️ Undo last move
-🔁 Restart game
-📱 Responsive grid layout
+
+[![🎮 Play Tic-Tac-Toe](https://img.shields.io/badge/⚡-Play%20Tic-Tac-Toe-blue?style=for-the-badge)](https://tic-tac-toe-pi-eight-29.vercel.app)
