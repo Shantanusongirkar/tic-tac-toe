@@ -15,6 +15,14 @@
 </p>
 
 ---
+<p align="center">
+  <a href="https://tic-tac-toe-pi-eight-29.vercel.app">
+    <img src="https://img.shields.io/badge/⚡-Play%20Live-blue?style=for-the-badge" alt="Play Live">
+  </a>
+  <a href="https://stackblitz.com/~/github.com/Shantanusongirkar/tic-tac-toe">
+    <img src="https://developer.stackblitz.com/img/open_in_stackblitz_small.svg" alt="Open in StackBlitz">
+  </a>
+</p>
 
 ## 🚀 Quick Start
 
